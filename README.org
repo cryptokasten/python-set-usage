@@ -1,0 +1,249 @@
+#+TITLE: Python set usage
+#+TAGS: cryptokasten, python, set
+#+PROPERTY: header-args :session *shell python-set-usage* :results replace code
+#+OPTIONS: ^:nil
+
+[[https://github.com/cryptokasten][file:https://img.shields.io/badge/dynamic/json.svg?url=https://api.github.com/users/cryptokasten&label=Cryptokasten&query=$.public_repos]]
+
+Python set usage examples.
+
+** Development environment
+
+Base docker image: [[https://hub.docker.com/_/python/][python:3.9.0-buster]].
+
+#+BEGIN_SRC sh :results silent raw
+docker pull python:3.9.0-buster
+#+END_SRC
+
+#+BEGIN_SRC sh :results silent raw
+docker run --rm -it \
+  -v $TMPDIR:$TMPDIR  \
+  python:3.9.0-buster python
+#+END_SRC
+
+** Code
+*** Create set
+**** Create empty set
+
+#+BEGIN_SRC python
+s = set()
+s
+#+END_SRC
+
+#+RESULTS:
+#+BEGIN_SRC python 
+set()
+#+END_SRC
+
+**** Short form
+
+#+BEGIN_SRC python
+s = {1, 2, 3}
+s
+#+END_SRC
+
+#+RESULTS:
+#+BEGIN_SRC python
+{1, 2, 3}
+#+END_SRC
+
+**** Don't use short form for create empty sets!
+
+#+BEGIN_SRC python
+d = {}
+d, type(d)
+#+END_SRC
+
+#+RESULTS:
+#+BEGIN_SRC python
+({}, <class 'dict'>)
+#+END_SRC
+
+**** Create from list
+
+#+BEGIN_SRC python
+lst = [1, 2, 3]
+s = set(lst)
+s
+#+END_SRC
+
+#+RESULTS:
+#+BEGIN_SRC python
+{1, 2, 3}
+#+END_SRC
+
+*** View type
+
+#+BEGIN_SRC python
+type(s)
+#+END_SRC
+
+#+RESULTS:
+#+BEGIN_SRC python
+<class 'set'>
+#+END_SRC
+
+*** Number of elements in set
+
+#+BEGIN_SRC python
+len({1, 2, 3})
+#+END_SRC
+
+#+RESULTS:
+#+BEGIN_SRC python
+3
+#+END_SRC
+
+*** Test membership
+
+**** In
+
+#+BEGIN_SRC python
+1 in {1, 2, 3}
+#+END_SRC
+
+#+RESULTS:
+#+BEGIN_SRC python
+True
+#+END_SRC
+
+**** Not in
+
+#+BEGIN_SRC python
+99 not in {1, 2, 3}
+#+END_SRC
+
+#+RESULTS:
+#+BEGIN_SRC python
+True
+#+END_SRC
+
+*** Test is disjoint
+
+Sets are disjoint if and only if their intersection is the empty set.
+
+#+BEGIN_SRC python
+{1, 2, 3}.isdisjoint({6})
+#+END_SRC
+
+#+RESULTS:
+#+BEGIN_SRC python
+True
+#+END_SRC
+
+-----
+
+#+BEGIN_SRC python
+{1, 2, 3}.isdisjoint({1})
+#+END_SRC
+
+#+RESULTS:
+#+BEGIN_SRC python
+False
+#+END_SRC
+
+*** Subset test
+
+#+BEGIN_SRC python
+{1}.issubset({1, 2, 3})
+#+END_SRC
+
+#+RESULTS:
+#+BEGIN_SRC python
+True
+#+END_SRC
+
+-----
+
+#+BEGIN_SRC python
+{1, 2} <= {1, 2}
+#+END_SRC
+
+#+RESULTS:
+#+BEGIN_SRC python
+True
+#+END_SRC
+
+-----
+
+#+BEGIN_SRC python
+{1, 2} < {1, 2}
+#+END_SRC
+
+#+RESULTS:
+#+BEGIN_SRC python
+False
+#+END_SRC
+
+*** Test superset
+
+#+BEGIN_SRC python
+{1, 2, 3}.issuperset({1})
+#+END_SRC
+
+#+RESULTS:
+#+BEGIN_SRC python
+True
+#+END_SRC
+
+-----
+
+#+BEGIN_SRC python
+{1, 2} <= {1, 2}
+#+END_SRC
+
+#+RESULTS:
+#+BEGIN_SRC python
+True
+#+END_SRC
+
+-----
+
+#+BEGIN_SRC python
+{1, 2} < {1, 2}
+#+END_SRC
+
+#+RESULTS:
+#+BEGIN_SRC python
+False
+#+END_SRC
+
+*** Union
+
+#+BEGIN_SRC python
+{1, 2} | {2, 3} | {3, 4}
+#+END_SRC
+
+#+RESULTS:
+#+BEGIN_SRC python
+{1, 2, 3, 4}
+#+END_SRC
+
+-----
+
+#+BEGIN_SRC python
+{1, 2}.union({2, 3}, {3, 4})
+#+END_SRC
+
+#+RESULTS:
+#+BEGIN_SRC python
+{1, 2, 3, 4}
+#+END_SRC
+
+*** Intersection
+
+*** Difference
+
+*** Symmetric difference
+
+*** Copy
+
+#+BEGIN_SRC python
+a = {1, 2, 3}
+b = a.copy()
+b.add()
+#+END_SRC
+
+** Resources
+
+1. https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset
