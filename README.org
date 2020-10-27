@@ -7,6 +7,36 @@
 
 Python set usage examples.
 
+** Table of Contents                                :TOC_3:QUOTE:
+#+BEGIN_QUOTE
+  - [[#development-environment][Development environment]]
+  - [[#code][Code]]
+    - [[#create-set][Create set]]
+    - [[#create-frozenset][Create frozenset]]
+    - [[#view-type][View type]]
+    - [[#number-of-elements-in-set][Number of elements in set]]
+    - [[#test-membership][Test membership]]
+    - [[#test-is-disjoint][Test is disjoint]]
+    - [[#subset-test][Subset test]]
+    - [[#test-superset][Test superset]]
+    - [[#union][Union]]
+    - [[#intersection][Intersection]]
+    - [[#difference][Difference]]
+    - [[#symmetric-difference][Symmetric difference]]
+    - [[#copy][Copy]]
+    - [[#there-are-no-ordering-function][There are no ordering function]]
+    - [[#update][Update]]
+    - [[#intersection-update][Intersection update]]
+    - [[#difference-update][Difference update]]
+    - [[#symmetric-difference-update][Symmetric difference update]]
+    - [[#add][Add]]
+    - [[#remove][Remove]]
+    - [[#discard][Discard]]
+    - [[#pop][Pop]]
+    - [[#clear][Clear]]
+  - [[#resources][Resources]]
+#+END_QUOTE
+
 ** Development environment
 
 Base docker image: [[https://hub.docker.com/_/python/][python:3.9.0-buster]].
