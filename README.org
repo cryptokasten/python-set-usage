@@ -25,7 +25,7 @@ docker run --rm -it \
 *** Create set
 **** Create empty set
 
-#+BEGIN_SRC python
+#+BEGIN_SRC python :results replace code :exports both
 s = set()
 s
 #+END_SRC
@@ -37,7 +37,7 @@ set()
 
 **** Short form
 
-#+BEGIN_SRC python
+#+BEGIN_SRC python :results replace code :exports both
 s = {1, 2, 3}
 s
 #+END_SRC
@@ -49,7 +49,7 @@ s
 
 **** Don't use short form for create empty sets!
 
-#+BEGIN_SRC python
+#+BEGIN_SRC python :results replace code :exports both
 d = {}
 d, type(d)
 #+END_SRC
@@ -61,7 +61,7 @@ d, type(d)
 
 **** Create from list
 
-#+BEGIN_SRC python
+#+BEGIN_SRC python :results replace code :exports both
 lst = [1, 2, 3]
 s = set(lst)
 s
@@ -74,7 +74,7 @@ s
 
 *** View type
 
-#+BEGIN_SRC python
+#+BEGIN_SRC python :results replace code :exports both
 type(s)
 #+END_SRC
 
@@ -85,7 +85,7 @@ type(s)
 
 *** Number of elements in set
 
-#+BEGIN_SRC python
+#+BEGIN_SRC python :results replace code :exports both
 len({1, 2, 3})
 #+END_SRC
 
@@ -98,7 +98,7 @@ len({1, 2, 3})
 
 **** In
 
-#+BEGIN_SRC python
+#+BEGIN_SRC python :results replace code :exports both
 1 in {1, 2, 3}
 #+END_SRC
 
@@ -109,7 +109,7 @@ True
 
 **** Not in
 
-#+BEGIN_SRC python
+#+BEGIN_SRC python :results replace code :exports both
 99 not in {1, 2, 3}
 #+END_SRC
 
@@ -122,7 +122,7 @@ True
 
 Sets are disjoint if and only if their intersection is the empty set.
 
-#+BEGIN_SRC python
+#+BEGIN_SRC python :results replace code :exports both
 {1, 2, 3}.isdisjoint({6})
 #+END_SRC
 
@@ -133,7 +133,7 @@ True
 
 -----
 
-#+BEGIN_SRC python
+#+BEGIN_SRC python :results replace code :exports both
 {1, 2, 3}.isdisjoint({1})
 #+END_SRC
 
@@ -144,7 +144,7 @@ False
 
 *** Subset test
 
-#+BEGIN_SRC python
+#+BEGIN_SRC python :results replace code :exports both
 {1}.issubset({1, 2, 3})
 #+END_SRC
 
@@ -155,7 +155,7 @@ True
 
 -----
 
-#+BEGIN_SRC python
+#+BEGIN_SRC python :results replace code :exports both
 {1, 2} <= {1, 2}
 #+END_SRC
 
@@ -166,7 +166,7 @@ True
 
 -----
 
-#+BEGIN_SRC python
+#+BEGIN_SRC python :results replace code :exports both
 {1, 2} < {1, 2}
 #+END_SRC
 
@@ -177,7 +177,7 @@ False
 
 *** Test superset
 
-#+BEGIN_SRC python
+#+BEGIN_SRC python :results replace code :exports both
 {1, 2, 3}.issuperset({1})
 #+END_SRC
 
@@ -188,7 +188,7 @@ True
 
 -----
 
-#+BEGIN_SRC python
+#+BEGIN_SRC python :results replace code :exports both
 {1, 2} <= {1, 2}
 #+END_SRC
 
@@ -199,7 +199,7 @@ True
 
 -----
 
-#+BEGIN_SRC python
+#+BEGIN_SRC python :results replace code :exports both
 {1, 2} < {1, 2}
 #+END_SRC
 
@@ -210,7 +210,7 @@ False
 
 *** Union
 
-#+BEGIN_SRC python
+#+BEGIN_SRC python :results replace code :exports both
 {1, 2} | {2, 3} | {3, 4}
 #+END_SRC
 
@@ -221,7 +221,7 @@ False
 
 -----
 
-#+BEGIN_SRC python
+#+BEGIN_SRC python :results replace code :exports both
 {1, 2}.union({2, 3}, {3, 4})
 #+END_SRC
 
